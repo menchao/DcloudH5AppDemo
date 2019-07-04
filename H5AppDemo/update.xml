@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>  
+<wgtu appid="H5AppDemo" >  
+<basis version="1.0.0" />  
+<remove>  
+<item path="plus/accelerometer_shake.html" />
+<item path="plus/audio.html" />    
+</remove>  
+</wgtu> 

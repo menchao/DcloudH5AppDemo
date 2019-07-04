@@ -4,7 +4,7 @@
     "name" : "H5AppDemo", //应用名称，程序桌面图标名称 
     "version" : {
         "name" : "1.0.0", //应用版本名称 
-        "code" : 1000 //应用版本号 
+        "code" : 100 //应用版本号 
     },
     "description" : "HTML5 Plus能力演示", //应用描述信息 
     "icons" : {
@@ -233,7 +233,9 @@
                 "share" : {},
                 "payment" : {},
                 "oauth" : {},
-                "speech" : {}
+                "speech" : {
+                    "ifly" : {}
+                }
             }
         }
     },

@@ -204,31 +204,8 @@
 			}  
 			
 			function incrementUpdate(){
-				console.log("更新中。。。");
-				var url='http://10.187.26.212/H54909E0E.wgtu';  
-				//url='http://demo.dcloud.net.cn/helloh5/update/HelloH5.wgtu';  
-				plus.nativeUI.showWaiting("升级中...");  
-				var dtask = plus.downloader.createDownload( url, {method:"GET"}, function(d,status){  
-				if ( status == 200 ) {   
-					console.log( "Download wgtu success: " + d.filename );  
-					plus.runtime.install(d.filename,{},function(){  
-						plus.nativeUI.closeWaiting();  
-						plus.nativeUI.alert("Update wgtu success, restart now!",function(){  
-							plus.runtime.restart();  
-						});  
-					},function(e){  
-						plus.nativeUI.closeWaiting();  
-						alert("Update wgtu failed: "+e.message);  
-					});  
-				} else {  
-					plus.nativeUI.closeWaiting();  
-					 alert( "Download wgtu failed: " + status );   
-				}   
-			} );  
-			dtask.addEventListener('statechanged',function(d,status){  
-				console.log("statechanged: "+d.state);  
-			});  
-			dtask.start();
+				
+				
 			}
 		</script>
 	</head>
@@ -251,7 +228,7 @@
 		</div>
 
 		<div>
-			<!-- <ul id="plist" style="list-style:none;margin:0;padding:0;text-align:left;float: none;">
+			<ul id="plist" style="list-style:none;margin:0;padding:0;text-align:left;float: none;">
 				<li id="plus/gallery.html" onclick="clicked(this.id, 'Gallery')">
 					<span class="item">Gallery
 						<div class="chs">系统相册</div>
@@ -268,15 +245,15 @@
 					<span class="item">Video
 						<div class="chs">视频多媒体</div>
 					</span>
-				</li> -->
+				</li> 
 
-			<!-- 	<li id="plus/NewPage.html" onclick="clicked(this.id, '新增页面', 'xhr')">
-					<span class="item">新增页面(差量包)
-						<div class="chs">新增页面(来自差量包)</div>
-					</span>
-				</li>
- -->
-		<!-- 	</ul> -->
+				<li id="plus/NewPage.html" onclick="clicked(this.id, '新增页面', 'xhr')">
+				<span class="item">新增页面(差量包)
+					<div class="chs">新增页面(来自差量包)</div>
+				</span>
+			</li>
+
+			</ul>
 		</div>
 
 
