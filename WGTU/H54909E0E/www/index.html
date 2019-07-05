@@ -157,7 +157,7 @@
 		<script>
 			//下载wgt文件  
 			var wgtUrl = "http://demo.dcloud.net.cn/test/update/H5EF3C469.wgt";
-			wgtUrl = "http://10.187.26.212/H54909E0E.wgt";
+			wgtUrl = "http://10.187.20.23/H54909E0E.wgt";
 			function updateWgt() {
 				plus.nativeUI.showWaiting("下载更新文件...");
 				plus.downloader.createDownload(wgtUrl, {
@@ -204,7 +204,30 @@
 			}  
 			
 			function incrementUpdate(){
-				
+				﻿console.log("更新中。。。");
+				var url = "http://10.187.20.23/H54909E0E.wgtu";  
+				plus.nativeUI.showWaiting("升级中...");  
+				var dtask = plus.downloader.createDownload( url, {method:"GET"}, function(d,status){  
+				if ( status == 200 ) {   
+					console.log( "Download wgtu success: " + d.filename );  
+					plus.runtime.install(d.filename,{},function(){  
+						plus.nativeUI.closeWaiting();  
+						plus.nativeUI.alert("Update wgtu success, restart now!",function(){  
+							plus.runtime.restart();  
+						});  
+					},function(e){  
+						plus.nativeUI.closeWaiting();  
+						alert("Update wgtu failed: "+e.message);  
+					});  
+				} else {  
+					plus.nativeUI.closeWaiting();  
+					 alert( "Download wgtu failed: " + status );   
+				}   
+			} );  
+			dtask.addEventListener('statechanged',function(d,status){  
+				console.log("statechanged: "+d.state);  
+			});  
+			dtask.start();
 				
 			}
 		</script>

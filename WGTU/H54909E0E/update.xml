@@ -3,6 +3,7 @@
 <basis version="1.0" />  
 <remove>  
 <item path="plus/accelerometer_shake.html" /> 
+<item path="plus/video.html" /> 
 </remove>  
 </wgtu>
 

@@ -139,25 +139,12 @@
 				position: relative;
 				z-index: 1;
 				max-width: 250px;
-				/* 	min-width: 54px;
-	max-width: 250px;
-	display: block;
-	margin: 0.3em;
-	padding: 0.4em 1em;
-	border: none;
-	background: none;
-	color: inherit;
-	vertical-align: middle;
-	position: relative;
-	z-index: 1;
-	-webkit-backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale; */
+			
 			}
 		</style>
-		<script>
+		<script type="text/javascript">
 			//下载wgt文件  
-			var wgtUrl = "http://demo.dcloud.net.cn/test/update/H5EF3C469.wgt";
-			wgtUrl = "http://10.187.26.212/H54909E0E.wgt";
+			var wgtUrl = "http://10.187.20.23/H54909E0E.wgt";
 			function updateWgt() {
 				plus.nativeUI.showWaiting("下载更新文件...");
 				plus.downloader.createDownload(wgtUrl, {
@@ -205,8 +192,7 @@
 			
 			function incrementUpdate(){
 				console.log("更新中。。。");
-				var url='http://10.187.26.212/H54909E0E.wgtu';  
-				//url='http://demo.dcloud.net.cn/helloh5/update/HelloH5.wgtu';  
+				var url = "http://10.187.20.23/H54909E0E.wgtu";  
 				plus.nativeUI.showWaiting("升级中...");  
 				var dtask = plus.downloader.createDownload( url, {method:"GET"}, function(d,status){  
 				if ( status == 200 ) {   
@@ -251,7 +237,8 @@
 		</div>
 
 		<div>
-			<!-- <ul id="plist" style="list-style:none;margin:0;padding:0;text-align:left;float: none;">
+			<ul id="plist" style="list-style:none;margin:0;padding:0;text-align:left;float: none;">
+				<!-- 全量更新包 -->
 				<li id="plus/gallery.html" onclick="clicked(this.id, 'Gallery')">
 					<span class="item">Gallery
 						<div class="chs">系统相册</div>
@@ -268,14 +255,15 @@
 					<span class="item">Video
 						<div class="chs">视频多媒体</div>
 					</span>
-				</li> -->
+				</li>
 
+				<!-- 差量更新包 -->
 			<!-- 	<li id="plus/NewPage.html" onclick="clicked(this.id, '新增页面', 'xhr')">
 					<span class="item">新增页面(差量包)
 						<div class="chs">新增页面(来自差量包)</div>
 					</span>
 				</li>
- -->
+	-->
 		<!-- 	</ul> -->
 		</div>
 
